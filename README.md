@@ -186,7 +186,7 @@ Follow these steps to deploy the Django application with Scrapy integration usin
    ```
 
 7. <p> The Django application should now be accessible at <http://IP:8000/admin> in your browser. 
-      Remember that to use it on your url make it available to public. Then replace localhost with your IP. Now login to your admin with username='root'password='654zz321xx'</p>
+      Remember that to use it on your url make it available to public. Then replace localhost with your IP. Now login to your admin with username='root'password='###'</p>
 
 ## Option 1 - Using DockerHub
 

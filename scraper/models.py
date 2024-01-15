@@ -1,4 +1,5 @@
 import os
+from server.settings import BASE_DIR
 
 from sqlalchemy import Column, Integer, String, Date, create_engine, ForeignKey
 from sqlalchemy.engine.base import Engine
@@ -15,10 +16,10 @@ def db_connect() -> Engine:
     Creates database connection using database settings from settings.py.
     Returns sqlalchemy engine instance
     """
-    # return create_engine(URL(**settings.DATABASE))
-    db_url = os.environ['DATABASE_URL']
-    db_url = db_url.replace('postgres://', 'postgresql://')
+    # SQLite connection (change the path if needed)
+    db_url = 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
     return create_engine(db_url)
+
 
 def create_items_table(engine: Engine):
     """

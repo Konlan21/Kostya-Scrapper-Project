@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@-d6826=x1w1uqjh0pnh6z=qjzg+&07(xn(on6d2*!&@_jhdc+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -75,16 +75,39 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'scraper_data',
+#         'USER': 'postgres',
+#         'PASSWORD': '654zz321xx',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
+
+# settings.py
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+
+import dj_database_url
+# import environ
+
+# env = environ.Env()
+# environ.Env.read_env()
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'scraper_data',
-        'USER': 'postgres',
-        'PASSWORD': '654zz321xx',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse('postgres://scraper_project_user:sLjo83hesNbUCWTy4m0wiuxmrFx74bDo@dpg-cmiloh8cmk4c739ln410-a.oregon-postgres.render.com/scraper_project')
 }
+
 
 
 # Password validation
